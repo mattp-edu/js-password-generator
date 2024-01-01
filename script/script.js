@@ -95,14 +95,6 @@ function getPasswordOptions() {
 
 // Function for getting a random element from an array
 function getRandom(arr) {
-<<<<<<< Updated upstream
-
-}
-
-// Function to generate password with user input
-function generatePassword() {
-
-=======
   // failsafe in case empty array
   if (arr.length < 1 ) return;
 
@@ -128,7 +120,6 @@ function generatePassword(settings) {
   }
 
   return passphrase;
->>>>>>> Stashed changes
 }
 
 // Get references to the #generate element
