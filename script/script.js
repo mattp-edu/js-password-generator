@@ -97,7 +97,7 @@ function getPasswordOptions() {
 function getRandom(arr) {
   // failsafe in case empty array
   if (arr.length < 1 ) return;
-
+  
   return arr[Math.round((Math.random() * (arr.length - 1)))];
 }
 
@@ -106,6 +106,7 @@ function generatePassword(settings) {
   if ( !(8 <= settings.len <= 128) ) return 101;          // check if password in 8-128 letter range
   if ( !(settings.lower || settings.upper) ) return 102;  // check if at least one type of character has been selected
   
+
   // building up generation array based on settings
   var gen = [];
   if (settings.lower) gen = gen.concat(lowerCasedCharacters);
