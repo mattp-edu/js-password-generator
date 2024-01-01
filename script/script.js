@@ -105,6 +105,11 @@ function generatePassword() {
 
 // Get references to the #generate element
 var generateBtn = document.querySelector('#generate');
+var rangeElement = document.querySelector('#passwordRange');
+var upperElement = document.querySelector('#upper');
+var lowerElement = document.querySelector('#lower');
+var numElement = document.querySelector('#num');
+var specElement = document.querySelector('#spec');
 
 // Write password to the #password input
 function writePassword() {
@@ -116,3 +121,20 @@ function writePassword() {
 
 // Add event listener to generate button
 generateBtn.addEventListener('click', writePassword);
+
+upperElement.addEventListener('change', validateForm);
+lowerElement.addEventListener('change', validateForm);
+
+rangeElement.addEventListener('change', updateRangeValueText);
+
+function updateRangeValueText() {
+  document.querySelector('#rangeValue').innerHTML = rangeElement.value;
+}
+
+function validateForm() {
+  if(upperElement.checked || lowerElement.checked) {
+    generateBtn.disabled = false;
+  } else {
+    generateBtn.disabled = true;
+  }
+}
