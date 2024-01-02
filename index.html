@@ -5,16 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Password Generator</title>
-    <link rel="stylesheet" href="style/bootstrap.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Audiowide">
     <link rel="stylesheet" href="style/style.css" />
   </head>
   <body>
+    <div class="brandingIcon"></div>
+    <div class="brandingTitle">Created by the legendary Matt Panyor.</div>
     <div class="wrapper">
       <header>
         <h1>Password Generator</h1>
       </header>
       <div class="card">
-        <div class="card-header">
+        <div class="card-header text-lg-end">
           <h2>Generate a Password</h2>
         </div>
         <div class="card-body">
@@ -26,11 +29,54 @@
           ></textarea>
         </div>
         <div class="card-footer">
-          <button id="generate" class="btn">Generate Password</button>
+          <button class="btn" data-bs-toggle="modal" data-bs-target="#modalPrompts">Generate Password</button>
+        </div>
+        <!-- Modal -->
+        <div class="modal fade" id="modalPrompts" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content bg-dark">
+              <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Please provide your generation perferences</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <form>
+                  <label for="passwordRange" class="form-label">Password Length: <b id="rangeValue"></b></label>
+                  <input type="range" class="form-range" min="8" max="128" step="1" id="passwordRange">
+                  <div class="list-group mb-2">
+                    Please select at least one type.
+                    <label class="list-group-item">
+                      <input class="form-check-input me-1" type="checkbox" value="" id="upper"/>
+                      Uppercase Characters
+                    </label>
+                    <label class="list-group-item">
+                      <input class="form-check-input me-1" type="checkbox" value="" id="lower"/>
+                      Lowercase Characters
+                    </label>
+                  </div>
+                  <div class="list-group">
+                    You can select any or none of the options below.
+                    <label class="list-group-item">
+                      <input class="form-check-input me-1" type="checkbox" value="" id="num"/>
+                      Numberic Characters
+                    </label>
+                    <label class="list-group-item">
+                      <input class="form-check-input me-1" type="checkbox" value="" id="spec"/>
+                      Special Characters
+                    </label>
+                  </div>
+                </form>
+              </div>
+              <div class="modal-footer d-flex justify-content-around">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button id="generate" type="button" class="btn btn-primary" data-bs-dismiss="modal" disabled>Generate Password</button>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-    <script src="script/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
     <script src="script/script.js"></script>
   </body>
 </html>
