@@ -21,25 +21,32 @@ body {
   padding-top: 30px;
   padding-left: 20px;
   padding-right: 20px;
+  background: rgb(130,0,0);
+  background: linear-gradient(155deg, rgba(130,0,0,1) 0%, rgba(38,38,38,1) 100%);
 }
 
 header {
   text-align: center;
   padding: 20px;
   padding-top: 0px;
-  color: hsl(206, 17%, 28%);
+  color: hsl(0, 0%, 100%);
+
 }
 
 .card {
-  background-color: hsl(0, 0%, 100%);
+  background-color: hsla(0, 0%, 56%, 0.4);
   border-radius: 5px;
   border-width: 1px;
   box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px 0px;
-  color: hsl(206, 17%, 28%);
+  color: hsl(0, 100%, 70%);
   font-size: 18px;
   margin: 0 auto;
   max-width: 800px;
   padding: 30px 40px;
+}
+
+.card-header {
+  text-transform: uppercase;
 }
 
 .card-header::after {
@@ -52,6 +59,11 @@ header {
 
 .card-body {
   min-height: 100px;
+}
+
+.list-group-item {
+  background-color: rgb(77, 77, 77);
+  color: #f9fbfd;
 }
 
 .card-footer {
@@ -116,10 +128,22 @@ button[disabled] {
   text-align: center;
   margin-top: 10px;
   margin-bottom: 10px;
-  border: 2px dashed #c0c7cf;
+  border: 2px dashed #b60000;
   border-radius: 6px;
   resize: none;
   overflow: hidden;
+  background-color: #490000;
+  color: #f9fbfd;
+}
+
+.brandingIcon {
+  position: fixed;
+  z-index: 0;
+  bottom: -0.2rem;
+  right: -0.2rem;
+  height: 150px;
+  width: 150px;
+  background-image: url(img.svg);
 }
 
 @media (max-width: 690px) {
@@ -127,10 +151,15 @@ button[disabled] {
     font-size: 1rem;
     margin: 16px 0px 0px 0px;
     padding: 10px 15px;
+    
   }
 
   #password {
     font-size: 1rem;
+  }
+
+  .card {
+    padding: 2rem 0.8rem;
   }
 }
 
